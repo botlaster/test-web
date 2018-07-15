@@ -1,0 +1,63 @@
+button, select {
+    text-transform: none;
+}
+element.style {
+    display: block;
+    padding-right: 17px;
+}
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+@-webkit-keyframes slide{
+    0%   {top:-100px;}
+    100% {top:0px;}
+}
+
+/* Standard syntax */
+@keyframes slide {
+    0%   {top:-100px;}
+    100% {top:0px;}
+}
+.fade.in {
+    top: 0px;
+    opacity: 1;
+	background-color:rgba(0,0,0,0.9);
+}
+
+.modal {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100000;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+	-webkit-animation-name: slide;
+    -webkit-animation-duration: 0.6s;
+    animation-name: slide;
+    animation-duration: 0.6s;
+}
+.btt {
+    margin-top: 50px !important;
+    width: 96%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	text-align:center;
+}

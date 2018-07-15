@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+<link rel="stylesheet" href="css/addapartment.css">
+<meta charset="UTF-8">
+</head>
+<body>
+<label>
+	การจ่ายเงิน*
+	</label>
+		<label class="container" style="width:100px;">จ่ายก่อนเข้าอยู่
+		<input class="checks" onclick="checkOnlyOne(this.value);" type="checkbox" name="paymentba" value="before"/>
+		<span class="checkmark"></span>
+		</label>
+		<label class="container" style="width:100px;">จ่ายหลังเข้าอยู่
+		<input class="checks" onclick="checkOnlyOne(this.value);" type="checkbox" name="paymentba" value="after"/>
+		<span class="checkmark"></span>
+		</label>
+<script>
+function checkbox()
+{
+	
+	var x = document.getElementsByClassName('checks');
+	if(x[0].checked==false&&x[1].checked==false)
+	{
+		alert("กรุณาเช็คการจ่ายเงิน");
+		return false;
+	}
+	/*
+	var checked=$("input[type=checkbox]:checked").length;
+	if(!checked)
+	{
+		alert("กรุณาเช็ค");
+		return false;
+	}*/
+}
+function checkOnlyOne(b){
+
+	var x = document.getElementsByClassName('checks');
+	var i;
+
+	for (i = 0; i < x.length; i++) {
+	  if(x[i].value != b) x[i].checked = false;
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+ส่วนจาก js เป็น php ทันทีทำไม่ได้อย่างที่บอกไว้ครับ ต้องใช้วิธีใกล้เคียงคือส่งข้อมูลแบบ ajax
+ถ้าใช้ jquery ajax ก็
+<?php $a = '100';//ตัวแปร php?>
+<script type="text/javascript">
+   x = <?php json_encode($a);?>;
+   x = x*100;
+   $.post('test.php',{data:x});
+</script>
+ส่วนหน้า test.php ก็มีคำสั่งรับข้อมูล เช่น
+<?php $b = $_POST['data'];
+//..เอาข้อมูล b ไปทำงานต่อ
+?>

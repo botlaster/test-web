@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+  function checkOnlyOne(b){
+
+var x = document.getElementsByClassName('daychecks');
+var i;
+
+for (i = 0; i < x.length; i++) {
+  if(x[i].value != b) x[i].checked = false;
+}
+}
+  </script>
+</head>
+
+<body>
+  Day of the week:
+<input class="daychecks" onclick="checkOnlyOne(this.value);" type="checkbox" name="reoccur_weekday" value="Monday" />Mon&nbsp;&nbsp;&nbsp;
+<input class="daychecks" onclick="checkOnlyOne(this.value);" type="checkbox" name="reoccur_weekday" value="Tuesday" />Tue&nbsp;&nbsp;&nbsp;
+<input class="daychecks" onclick="checkOnlyOne(this.value);" type="checkbox" name="reoccur_weekday" value="Wednesday" />Wed&nbsp;&nbsp;&nbsp;
+<input class="daychecks" onclick="checkOnlyOne(this.value);" type="checkbox" name="reoccur_weekday" value="Thursday" />Thu&nbsp;&nbsp;&nbsp;
+<input class="daychecks" onclick="checkOnlyOne(this.value);" type="checkbox" name="reoccur_weekday" value="Friday" />Fri&nbsp;&nbsp;&nbsp;
+<input class="daychecks" onclick="checkOnlyOne(this.value);" type="checkbox" name="reoccur_weekday" value="Saturday" />Sat&nbsp;&nbsp;&nbsp;
+<input class="daychecks" onclick="checkOnlyOne(this.value);" type="checkbox" name="reoccur_weekday" value="Sunday" />Sun&nbsp;&nbsp;&nbsp;<br /><br />
+
+
+</body>

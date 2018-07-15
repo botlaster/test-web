@@ -1,0 +1,113 @@
+<html>
+<head>
+     <title>Insert Table</title>
+     <style><style>
+table{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+	border:1px;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+<script>
+function newTable(elId) {
+	var tablee = document.getElementsByTagName("table");
+	var num = tablee.length;
+ var table = document.createElement("table");
+ table.setAttribute("id",num);
+ document.getElementById(elId).appendChild(table);
+ 
+ var tbody = document.createElement("tbody");
+ table.appendChild(tbody);
+
+ var tr = document.createElement("tr");
+ tbody.appendChild(tr);
+ 
+  var th = document.createElement("th");
+ th.innerHTML = 'This TH';
+ tr.appendChild(th);
+   var th = document.createElement("th");
+ th.innerHTML = 'This TH';
+ tr.appendChild(th);
+
+ var tr = document.createElement("tr");
+ tbody.appendChild(tr);
+
+ var td = document.createElement("td");
+// td.setAttribute("style", "font-family: Verdana; font-size: 12px; font-weight: bold; color: #000000");
+ td.innerHTML = 'This is a TD';
+ tr.appendChild(td);
+ var td = document.createElement("td");
+// td.setAttribute("style", "font-family: Verdana; font-size: 12px; font-weight: bold; color: #000000");
+ td.innerHTML = 'This is a TD';
+ tr.appendChild(td);
+}
+function ap()
+{
+	var p = document.createElement("p");
+	p.innerHTML = 'This P P P';
+document.body.appendChild(p);
+}
+function row()
+{
+	var table = document.createElement("table");
+	var create = document.getElementById("insertTableHere");
+	create.appendChild(table);
+
+	var tbody = document.createElement("tbody");
+	table.appendChild(tbody);
+
+	var tr = document.createElement("tr");
+	tbody.appendChild(tr);
+
+
+}
+function newrow()
+{
+	try{
+	var table = document.getElementsByTagName("table");
+	var num = table.length;
+//	var td= document.createElement("td");
+//	td.innerHTML="THIS TD";
+//	table.appendChild(td);
+	var numm = document.getElementById(num-1);
+    var row = numm.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = "NEW CELL1";
+    cell2.innerHTML = "NEW CELL2";
+
+	}catch(err)
+	{
+		alert(err);
+	}
+}
+</script>
+</head>
+
+<body>
+<input type="button" onclick="newTable('insertTableHere')" value="add table">
+<input type="button" onclick="newrow()" value="new row">
+<input type="button" onclick="row()" value="row">
+<input type="button" onclick="ap()" value="P">
+<div name="insertTableHere" id="insertTableHere" style="border: 1px solid #000000"></div>
+</body>
+</html>
+

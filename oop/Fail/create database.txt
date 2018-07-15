@@ -1,0 +1,2 @@
+create database phpworkshop collate utf8_general_ci;
+CREATE TABLE `phpworkshop`.`tb_user` ( `UserID` INT(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT , `UID` VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , `UPASS` VARCHAR(20) NOT NULL , `Name` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , `Surename` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , `SexID` VARCHAR(1) NOT NULL , `Mobile` VARCHAR(100) NOT NULL , `Email` VARCHAR(100) NOT NULL , `Address` TEXT NOT NULL , PRIMARY KEY (`UserID`)) ENGINE = InnoDB;

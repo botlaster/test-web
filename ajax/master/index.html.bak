@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>Document</title>
+ </head>
+ <body>
+<p>This is a paragraph.</p>
+
+<button>Toggle between slide up and slide down for a p element</button>
+  <div class="container">
+	<h2>jQuery AJAX </h2>
+	<p></p><h4 id="date">Today</h4>
+	<hr>
+	<input type="button" id="get" class="btn btn-primary" value="Submit">
+  </div>
+<!--  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script src="app.js"></script>-->
+ </body>
+ <script>
+ </script>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<link rel="stylesheet" href="files/bootstrap.min.css">
+<link rel="stylesheet" href="files/main.min.css">
+<script src="js/load.js"></script>
+  <style>
+
+button, select {
+    text-transform: none;
+}
+element.style {
+    display: block;
+    padding-right: 17px;
+}
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+.fade.in {
+    opacity: 1;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  </style>
+ </head>
+ <body>
+  <div class="modal fade in" id="addRoomRate" style="display: none; padding-right: 17px;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" onclick="cl()" class="close"><span ><i class="fa fa-times" ></i> ปิด</span></button>
+            <h4 class="modal-title">แก้ไขค่าห้อง</h4>
+          </div>
+          <form ng-submit="saveRoomRate()" class="ng-pristine ng-invalid ng-invalid-required">
+            <div class="modal-body">
+              <p>
+                </p><table class="table table-bordered">
+                  <tbody><tr>
+                    <td><strong>ค่าเช่าห้อง</strong> (บาท/เดือน)</td>
+                    <td>
+                      <input type="text" ng-model="roomRateModal.roomCost_month" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" required="">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>ค่าเช่าเฟอร์นิเจอร์</strong> (บาท/เดือน)</td>
+                    <td>
+                      <input type="text" ng-model="roomRateModal.furnitureCost" class="form-control ng-pristine ng-untouched ng-not-empty ng-valid ng-valid-required" required="">
+                    </td>
+                  </tr>
+                </tbody></table>
+              <p></p>
+              * ถ้าไม่มีให้กำหนดเป็น 0
+            </div>
+            <div class="modal-footer">
+              <button type="submit" ng-disabled="isSaving" class="btn btn-green"><i class="fa-spin ng-hide"></i> บันทึก</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+	<button onclick="modalAddRoomRate()" ng-show="selectMode" ng-disabled="isSaving || roomSelected==0" type="button" class=" btn btn-water btn-lg">
+            กำหนดค่าห้อง
+        </button>
+<script>
+function modalAddRoomRate()
+{
+	var a = document.getElementById("addRoomRate");
+	a.style.display="block";
+}
+function cl()
+{
+	var a = document.getElementById("addRoomRate");
+	a.style.display="none";
+}
+</script>
+ </body>
+</html>

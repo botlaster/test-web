@@ -1,0 +1,55 @@
+.font
+{
+	font-family:thai Sans Lite !important;
+	font-size:30px;
+	color: white;
+}
+.w3-container a{ 
+	color:#ccffcc;
+	text-decoration: none;
+	font-size:18px;
+}
+.allow a:hover
+{
+	color:#80bfff;
+}
+.del a:hover
+{
+	color:#ff5050;
+}
+img{
+  border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+table{
+	table-layout:fixed;
+	font:20px !important;
+}
+.asdf:hover {opacity: 0.7;}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #990000;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #000000}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+ }
+td{
+	padding-left: 40px;
+	padding-right: 40px;
+}

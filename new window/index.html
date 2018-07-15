@@ -1,0 +1,30 @@
+<html>
+    <head>
+    <title>test</title>
+    <script language="JavaScript">
+		function js_popup(theURL,width,height) { //v2.0
+			var textfield = document.getElementById('textfield').value;
+			theURL += '?textfield='+textfield;
+			leftpos = (screen.availWidth - width) / 2;
+			toppos = (screen.availHeight - height) / 2;
+			window.open(theURL, "viewdetails","width=" + width + ",height=" + height + ",left=" + leftpos + ",top=" + toppos);
+		}
+		/*function winopen(theURL,winName,width,height,scollbar) { 
+var setfocus;
+  setfocus = window.open(theURL,winName,'resizable=no,scrollbars='+ scollbar +',width='+ width +',height='+ height +',top=0,left=0');
+  setfocus.focus();
+}*/
+		
+    </script>
+    </head>
+<body>
+
+    <form name="frmMain" action="" method="post">
+        <input type="text" name="textfield" id="textfield">
+      
+        <input type="submit" name="submit" value="submit" onClick="js_popup('echo.php',350,400); return false;"/>
+      
+
+    </form>
+</body>
+</html>

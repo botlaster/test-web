@@ -1,0 +1,139 @@
+<html>
+<style>
+input[type=text], select {
+    width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	margin-bottom: 20px;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.button5:hover {
+    background-color: #555555;
+    color: white;
+}
+.div
+{
+	width:33.33%;
+}
+.label
+{
+display:block;
+}
+.addt
+{
+display:inline;
+}
+</style>
+<body>
+<div id="fooBar">
+</div>
+<input type="text" name="floor" id="floor" maxlength="3" onkeydown="CheckNum()" oninput="addd()">
+<input class="button button5" type="button" onclick="add();" value="Add One">
+<input class="button button5" type="button" onclick="before();" value="RemoveAll">
+<script>
+
+function before()
+{
+	var a = document.getElementById("floor");
+	a.value="";
+	a.focus();
+	removechildd();
+}
+function removechild(id)
+{
+var element = document.getElementById(id);
+element.parentNode.removeChild(element);
+}
+function addd()
+{
+	var a = document.getElementById("floor").value;
+	removechildd();
+	for(i=0;i<a;i++)
+	{
+		add();
+	}
+}
+function removechildd()
+{
+	var element = document.getElementsByClassName("addt");
+	var label = document.getElementsByClassName("label");
+	var div = document.getElementsByClassName("div");
+	while(element.length>0)
+	{
+		element[0].parentNode.removeChild(element[0]);
+	}
+	while(label.length>0)
+	{
+		label[0].parentNode.removeChild(label[0]);
+	}
+	while(div.length>0)
+	{
+		div[0].parentNode.removeChild(div[0]);
+	}
+}
+function add() {
+//Create an input type dynamically.
+var element = document.createElement("input");
+//Create Labels
+var label = document.createElement("Label");
+var div = document.createElement("Div");
+var value = document.getElementsByClassName("addt").length;
+value=parseInt(value+1);
+label.setAttribute("class","label");
+label.innerHTML = "Floor: "+value +" Have room";     
+div.setAttribute("class","div");
+//Assign different attributes to the element.
+element.setAttribute("type", "text");
+element.setAttribute("value", "0");
+element.setAttribute("name", "floor"+value);
+element.setAttribute("style", "width:200px;margin-right:50px;");
+element.setAttribute("class","addt");
+element.setAttribute("id","id"+value);
+element.setAttribute("onkeydown", "removechild(this.id)");
+element.setAttribute("onclick", "al(this.name)");
+label.setAttribute("style", "font-weight:normal");
+// 'foobar' is the div id, where new fields are to be added
+var foo = document.getElementById("fooBar");
+
+//Append the element in page (in span).
+foo.appendChild(div);
+div.appendChild(label);
+div.appendChild(element);
+}
+function al(name)
+{
+	alert(name);
+}
+function CheckNum(){
+	var a = event.keyCode;
+		if (a!=8&a!=13&a!=116&(a < 48 || a > 57)){
+		      event.returnValue = false;
+	    	}	
+}
+//alert(document.body.innerHTML);	
+</script>
+</body>
+</html>

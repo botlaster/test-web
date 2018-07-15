@@ -1,0 +1,17 @@
+<html>
+<head>
+<script>
+function show_alert() {
+  if(confirm("Do you really want to do this?"))
+    document.forms[0].submit();
+  else
+    return false;
+}
+</script>
+</head>
+<body>
+<form action="asdfg.html" method="post">
+<a href="javascript:void(0)" onclick="show_alert();">Send</a>
+</form>
+</body>
+</html>

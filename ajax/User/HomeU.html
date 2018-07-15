@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<script language="javascript">
+		function showUser(val)
+		{
+			//ถ้าไม่ได้เลือก user คนใด
+			if(val=="")
+			{
+				document.getElementById("txtHint").innerHTML="";
+				return;
+			}
+			//กรณีเลือก user คนใดคนหนึ่ง Ajax engine จะทำงาน
+			if(window.XMLHttpRequest)
+			{
+				xmlhttp=new XMLHttpRequest();
+			}
+			else
+			{
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange=function()
+			{
+				if(this.readyState==4 && this.status==200)
+				{
+					document.getElementById("txtHint").innerHTML=this.responseText;
+				}
+			}
+			//send request to server
+			xmlhttp.open("GET","getuser.php?q="+val,true);
+			xmlhttp.send();
+		}
+		function showUser2(val)
+		{
+			//ถ้าไม่ได้เลือก user คนใด
+			if(val=="")
+			{
+				document.getElementById("txtHint").innerHTML="";
+				return;
+			}
+			//กรณีเลือก user คนใดคนหนึ่ง Ajax engine จะทำงาน
+			if(window.XMLHttpRequest)
+			{
+				xmlhttp=new XMLHttpRequest();
+			}
+			else
+			{
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange=function()
+			{
+				if(this.readyState==4 && this.status==200)
+				{
+					document.getElementById("txtHint").innerHTML=this.responseText;
+				}
+			}
+			//send request to server
+			xmlhttp.open("POST","getuser.php",true);
+			xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			xmlhttp.send("q="+val);
+		}
+        </script>
+</head>
+<body>
+<form>
+<select name="users" onchange="showUser(this.value)">
+<option value="">Select a person:</option>
+<option value="1">Peter Griffin</option>
+<option value="2">Lois Griffin</option>
+<option value="3">Joseph Swanson</option>
+<option value="4">Glenn Quagmire</option>
+</select>
+<select name="userss" onchange="showUser2(this.value)">
+<option value="">Select a person:</option>
+<option value="1">Peter Griffin</option>
+<option value="2">Lois Griffin</option>
+<option value="3">Joseph Swanson</option>
+<option value="4">Glenn Quagmire</option>
+</select>
+</form>
+<br>
+<div id="txtHint"><b>Person info will be listed here.</b></div>
+
+</body>
+</html>
